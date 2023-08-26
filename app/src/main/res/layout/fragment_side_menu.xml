@@ -52,6 +52,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <!-- TODO: set the side in the view model when the RadioButton is clicked -->
+                <!-- added setSide function -->
                 <RadioButton
                     android:id="@+id/salad"
                     android:layout_width="wrap_content"
