@@ -56,6 +56,7 @@
                     android:id="@+id/salad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.setSide()}"
                     android:text='@{viewModel.menuItems["salad"].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 1" />
@@ -86,6 +87,7 @@
                     android:id="@+id/soup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.setSide()}"
                     android:text='@{viewModel.menuItems["soup"].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 2" />
@@ -117,6 +119,7 @@
                     android:id="@+id/potatoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.setSide()}"
                     android:text='@{viewModel.menuItems["potatoes"].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 3" />
@@ -147,6 +150,7 @@
                     android:id="@+id/rice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.setSide()}"
                     android:text='@{viewModel.menuItems["rice"].name}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 4" />

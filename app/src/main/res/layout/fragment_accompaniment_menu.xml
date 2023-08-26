@@ -53,6 +53,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <!-- set the accompaniment in the view model when the RadioButton is clicked -->
+                <!-- нужно передать строку в viewModel.setAccompaniment(), я не понимаю как -->
                 <RadioButton
                     android:id="@+id/bread"
                     android:layout_width="wrap_content"
