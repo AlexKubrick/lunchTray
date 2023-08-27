@@ -22,9 +22,9 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
     private final android.widget.ScrollView mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback2;
+    private final android.view.View.OnClickListener mCallback6;
     @Nullable
-    private final android.view.View.OnClickListener mCallback3;
+    private final android.view.View.OnClickListener mCallback7;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -63,8 +63,8 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
         this.total.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback2 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
-        mCallback3 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
+        mCallback6 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
+        mCallback7 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -198,26 +198,32 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String viewModelSideToString = null;
         androidx.lifecycle.LiveData<com.example.lunchtray.model.MenuItem> viewModelAccompaniment = null;
         androidx.lifecycle.LiveData<java.lang.String> viewModelSubtotal = null;
+        java.lang.String totalAndroidStringTotalViewModelTotal = null;
+        java.lang.String taxAndroidStringTaxViewModelTax = null;
+        java.lang.String viewModelEntreeNameToString = null;
         java.lang.String viewModelEntreeGetFormattedPrice = null;
         java.lang.String viewModelSideGetFormattedPrice = null;
-        java.lang.String viewModelAccompanimentToString = null;
         java.lang.String viewModelAccompanimentGetFormattedPrice = null;
+        java.lang.String subtotalAndroidStringSubtotalViewModelSubtotal = null;
         java.lang.String viewModelTaxGetValue = null;
+        java.lang.String viewModelSideNameToString = null;
         com.example.lunchtray.model.MenuItem viewModelEntreeGetValue = null;
+        java.lang.String viewModelAccompanimentNameToString = null;
         com.example.lunchtray.model.MenuItem viewModelSideGetValue = null;
         java.lang.String viewModelSubtotalGetValue = null;
         com.example.lunchtray.model.MenuItem viewModelAccompanimentGetValue = null;
         com.example.lunchtray.ui.order.CheckoutFragment checkoutFragment = mCheckoutFragment;
         androidx.lifecycle.LiveData<com.example.lunchtray.model.MenuItem> viewModelEntree = null;
+        java.lang.String viewModelAccompanimentName = null;
         androidx.lifecycle.LiveData<java.lang.String> viewModelTotal = null;
         androidx.lifecycle.LiveData<com.example.lunchtray.model.MenuItem> viewModelSide = null;
+        java.lang.String viewModelEntreeName = null;
+        java.lang.String viewModelSideName = null;
         java.lang.String viewModelTotalGetValue = null;
         com.example.lunchtray.model.OrderViewModel viewModel = mViewModel;
         androidx.lifecycle.LiveData<java.lang.String> viewModelTax = null;
-        java.lang.String viewModelEntreeToString = null;
 
         if ((dirtyFlags & 0x1bfL) != 0) {
 
@@ -238,10 +244,16 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
 
 
                     if (viewModelAccompanimentGetValue != null) {
-                        // read viewModel.accompaniment.getValue().toString()
-                        viewModelAccompanimentToString = viewModelAccompanimentGetValue.toString();
                         // read viewModel.accompaniment.getValue().getFormattedPrice()
                         viewModelAccompanimentGetFormattedPrice = viewModelAccompanimentGetValue.getFormattedPrice();
+                        // read viewModel.accompaniment.getValue().name
+                        viewModelAccompanimentName = viewModelAccompanimentGetValue.getName();
+                    }
+
+
+                    if (viewModelAccompanimentName != null) {
+                        // read viewModel.accompaniment.getValue().name.toString()
+                        viewModelAccompanimentNameToString = viewModelAccompanimentName.toString();
                     }
             }
             if ((dirtyFlags & 0x182L) != 0) {
@@ -257,6 +269,10 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
                         // read viewModel.subtotal.getValue()
                         viewModelSubtotalGetValue = viewModelSubtotal.getValue();
                     }
+
+
+                    // read @android:string/subtotal
+                    subtotalAndroidStringSubtotalViewModelSubtotal = subtotal.getResources().getString(R.string.subtotal, viewModelSubtotalGetValue);
             }
             if ((dirtyFlags & 0x184L) != 0) {
 
@@ -276,8 +292,14 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
                     if (viewModelEntreeGetValue != null) {
                         // read viewModel.entree.getValue().getFormattedPrice()
                         viewModelEntreeGetFormattedPrice = viewModelEntreeGetValue.getFormattedPrice();
-                        // read viewModel.entree.getValue().toString()
-                        viewModelEntreeToString = viewModelEntreeGetValue.toString();
+                        // read viewModel.entree.getValue().name
+                        viewModelEntreeName = viewModelEntreeGetValue.getName();
+                    }
+
+
+                    if (viewModelEntreeName != null) {
+                        // read viewModel.entree.getValue().name.toString()
+                        viewModelEntreeNameToString = viewModelEntreeName.toString();
                     }
             }
             if ((dirtyFlags & 0x188L) != 0) {
@@ -293,6 +315,10 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
                         // read viewModel.total.getValue()
                         viewModelTotalGetValue = viewModelTotal.getValue();
                     }
+
+
+                    // read @android:string/total
+                    totalAndroidStringTotalViewModelTotal = total.getResources().getString(R.string.total, viewModelTotalGetValue);
             }
             if ((dirtyFlags & 0x190L) != 0) {
 
@@ -310,10 +336,16 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
 
 
                     if (viewModelSideGetValue != null) {
-                        // read viewModel.side.getValue().toString()
-                        viewModelSideToString = viewModelSideGetValue.toString();
                         // read viewModel.side.getValue().getFormattedPrice()
                         viewModelSideGetFormattedPrice = viewModelSideGetValue.getFormattedPrice();
+                        // read viewModel.side.getValue().name
+                        viewModelSideName = viewModelSideGetValue.getName();
+                    }
+
+
+                    if (viewModelSideName != null) {
+                        // read viewModel.side.getValue().name.toString()
+                        viewModelSideNameToString = viewModelSideName.toString();
                     }
             }
             if ((dirtyFlags & 0x1a0L) != 0) {
@@ -329,6 +361,10 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
                         // read viewModel.tax.getValue()
                         viewModelTaxGetValue = viewModelTax.getValue();
                     }
+
+
+                    // read @android:string/tax
+                    taxAndroidStringTaxViewModelTax = tax.getResources().getString(R.string.tax, viewModelTaxGetValue);
             }
         }
         // batch finished
@@ -336,40 +372,40 @@ public class FragmentCheckoutBindingImpl extends FragmentCheckoutBinding impleme
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.accompanimentPrice, viewModelAccompanimentGetFormattedPrice);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.accompanimentSelection, viewModelAccompanimentToString);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.accompanimentSelection, viewModelAccompanimentNameToString);
         }
         if ((dirtyFlags & 0x100L) != 0) {
             // api target 1
 
-            this.cancelButton.setOnClickListener(mCallback3);
-            this.submitButton.setOnClickListener(mCallback2);
+            this.cancelButton.setOnClickListener(mCallback7);
+            this.submitButton.setOnClickListener(mCallback6);
         }
         if ((dirtyFlags & 0x184L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.entreePrice, viewModelEntreeGetFormattedPrice);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.entreeSelection, viewModelEntreeToString);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.entreeSelection, viewModelEntreeNameToString);
         }
         if ((dirtyFlags & 0x190L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.sidePrice, viewModelSideGetFormattedPrice);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.sideSelection, viewModelSideToString);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.sideSelection, viewModelSideNameToString);
         }
         if ((dirtyFlags & 0x182L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.subtotal, viewModelSubtotalGetValue);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.subtotal, subtotalAndroidStringSubtotalViewModelSubtotal);
         }
         if ((dirtyFlags & 0x1a0L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tax, viewModelTaxGetValue);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tax, taxAndroidStringTaxViewModelTax);
         }
         if ((dirtyFlags & 0x188L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.total, viewModelTotalGetValue);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.total, totalAndroidStringTotalViewModelTotal);
         }
     }
     // Listener Stub Implementations
